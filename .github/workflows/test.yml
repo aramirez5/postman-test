@@ -24,10 +24,13 @@ jobs:
 
     - name: Checkout repository
       uses: actions/checkout@v3
-      with:
-        node-version: 18.x
 
     - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+
+    - name: Install NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
 
     - name: Install Newman and reporter
       run: |
